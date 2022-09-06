@@ -1,0 +1,44 @@
+<div class="topnav">
+  <a routerLink="/student">Mentor Recommendation</a>
+  <a routerLink="/profile" class="active">Info</a>
+  <a routerLink="/error">TEST</a>
+</div>
+
+<form id="msform" (ngSubmit)="update()" >
+  <fieldset>
+    <h1 class="fs-title">Your Info, you can update by click update button</h1>
+    <h2 class="fs-subtitle">Your Name</h2>
+  <input type="text" name="username" required [formControl]="name" >
+    <h2 class="fs-subtitle">Email</h2>
+  <input type="text" name="email" required [formControl]="email" >
+    <h2 class="fs-subtitle">Gender</h2>
+    <br/><br/><br/><br/>
+    <li *ngFor="let g of genders">
+      <button class="b1" [class.selected]="g === selectedGender" type="button" (click)="selectGender(g)">
+        <span>{{g}}</span>
+      </button>
+    </li><br/><br/><br/>
+
+    <h2 class="fs-subtitle">Professor's gender you like :)</h2><br/><br/><br/>
+    <li>
+      <select class="fs-subtitle" [(ngModel)]="selectedLikedGender"  [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let l of likedGender">
+          {{l}}
+        </option>
+      </select>
+    </li><br/><br/><br/>
+
+
+    <h2 class="fs-subtitle">The professor's position you like</h2><br/><br/><br/>
+    <li>
+      <select class="fs-subtitle" [(ngModel)]="likedPos" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let g of positions">{{g}}</option>
+      </select>
+    </li><br/><br/><br/>
+
+
+    <h2 class="fs-subtitle">Your Panther ID</h2>
+  <input type="text" name="pid" required [formControl]="pid" >
+    <button class="submit">Update your profile</button>
+  </fieldset>
+</form>

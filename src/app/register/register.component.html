@@ -1,1 +1,24 @@
-<p>register works!</p>
+<div class="topnav">
+  <a href="/">HOME</a>
+  <a routerLink="/login">Login</a>
+  <a routerLink="/register" class="active">Register</a>
+  <a routerLink="/error">TEST</a>
+</div>
+<h2>Register</h2>
+<form (ngSubmit)="submit()" >
+  <div class="imgcontainer">
+    <img src="/assets/images/duck.jpeg" />
+  </div>
+
+  <div class="container">
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required [formControl]="name" >
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required [formControl]="password" >
+
+    <button type="submit">Register</button>
+  </div>
+</form>
+
+
