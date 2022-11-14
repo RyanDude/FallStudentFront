@@ -2,7 +2,6 @@
   <a href="/">HOME</a>
   <a routerLink="/login">Login</a>
   <a routerLink="/register" class="active">Register</a>
-  <a routerLink="/error">TEST</a>
 </div>
 <h2>Register</h2>
 <form (ngSubmit)="submit()" >
@@ -16,6 +15,12 @@
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required [formControl]="password" >
+    <label for="role"><b>Register AS</b></label>
+    <li>
+      <select class="fs-subtitle" [(ngModel)]="user_role" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let a of roles">{{a}}</option>
+      </select>
+    </li>
 
     <button type="submit">Register</button>
   </div>

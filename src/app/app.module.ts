@@ -11,6 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { ErrorComponent } from './error/error.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MentorProfileComponent } from './mentor-profile/mentor-profile.component';
+import { MentorComponent } from './mentor/mentor.component';
+import { StudentComponent } from './student/student.component';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { ProfileComponent } from './profile/profile.component';
     LoginComponent,
     RegisterComponent,
     ErrorComponent,
-    ProfileComponent
+    ProfileComponent,
+    MentorProfileComponent,
+    MentorComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,

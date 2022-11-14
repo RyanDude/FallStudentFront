@@ -2,6 +2,7 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 form {
   border: 3px solid #e1ecf4;
+
 }
 
 input[type=text], input[type=password] {
@@ -44,9 +45,16 @@ img.avatar {
 }
 
 .container {
-  padding: 16px;
+  padding: 10px;
   margin-left: 41%;
   margin-right: 41%;
+}
+.check{
+  position: relative;
+  height: 14px;
+  width: 14px;
+  top:3px;
+  right:0;
 }
 
 span.psw {
@@ -59,9 +67,6 @@ span.psw {
   span.psw {
     display: block;
     float: none;
-  }
-  .cancelbtn {
-    width: 100%;
   }
 }
 
@@ -103,9 +108,11 @@ input{
   margin-bottom: 10px;
   height: 30px;
   position: relative;
-  border: 2px solid #cdcdcd;
-  border-color: rgba(0, 0, 0, .14);
+  border: 2px solid rgba(0, 0, 0, .14);
   background-color: AliceBlue;
   font-size: 14px;
+}
+.b{
+  top:20px;
 }
 

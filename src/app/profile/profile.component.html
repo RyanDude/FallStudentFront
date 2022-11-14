@@ -1,7 +1,6 @@
 <div class="topnav">
-  <a routerLink="/student">Mentor Recommendation</a>
+  <a routerLink="/student">Student Home</a>
   <a routerLink="/profile" class="active">Info</a>
-  <a routerLink="/error">TEST</a>
 </div>
 
 <form id="msform" (ngSubmit)="update()" >
@@ -11,12 +10,14 @@
   <input type="text" name="username" required [formControl]="name" >
     <h2 class="fs-subtitle">Email</h2>
   <input type="text" name="email" required [formControl]="email" >
-    <h2 class="fs-subtitle">Gender</h2>
-    <br/><br/><br/><br/>
-    <li *ngFor="let g of genders">
-      <button class="b1" [class.selected]="g === selectedGender" type="button" (click)="selectGender(g)">
-        <span>{{g}}</span>
-      </button>
+    <h2 class="fs-subtitle">Gender</h2><br/><br/><br/>
+
+    <li>
+      <select class="fs-subtitle" [(ngModel)]="selectedGender"  [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let l of genders">
+          {{l}}
+        </option>
+      </select>
     </li><br/><br/><br/>
 
     <h2 class="fs-subtitle">Professor's gender you like :)</h2><br/><br/><br/>

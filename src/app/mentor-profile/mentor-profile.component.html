@@ -1,0 +1,39 @@
+<div class="topnav">
+  <a routerLink="/mentor">Mentor Home</a>
+  <a routerLink="/mentor_profile" class="active">Mentor Info</a>
+</div>
+
+<form id="msform" (ngSubmit)="update()" >
+  <fieldset>
+    <h1 class="fs-title">Your Info, you can update by click update button</h1>
+    <h2 class="fs-subtitle">Your Name</h2>
+    <input type="text" name="username" required [formControl]="name" >
+    <h2 class="fs-subtitle">Email</h2>
+    <input type="text" name="email" required [formControl]="email" >
+    <h2 class="fs-subtitle">Current Employer</h2>
+    <input type="text" name="current_employer" required [formControl]="current_employer" >
+
+    <h2 class="fs-subtitle">Your Gender</h2><br/><br/><br/>
+    <li>
+      <select class="fs-subtitle" [(ngModel)]="gender" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let g of genders">{{g}}</option>
+      </select>
+    </li><br/><br/><br/>
+
+    <h2 class="fs-subtitle">Your Title</h2><br/><br/><br/>
+    <li>
+      <select class="fs-subtitle" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let g of titles">{{g}}</option>
+      </select>
+    </li><br/><br/><br/>
+
+    <h2 class="fs-subtitle">Your Race</h2><br/><br/><br/>
+    <li>
+      <select class="fs-subtitle" [(ngModel)]="race" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let g of races">{{g}}</option>
+      </select>
+    </li><br/><br/><br/>
+
+    <button class="submit">Update your profile</button>
+  </fieldset>
+</form>

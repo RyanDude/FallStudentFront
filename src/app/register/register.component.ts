@@ -8,9 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  url:string = 'http://localhost:8080/studentreg';
+  url:string = '';
   name = new FormControl('');
   password = new FormControl('');
+  user_role?:any;
+  roles:string[] = ['STUDENT','MENTOR','ADMIN'];
   constructor(private http:HttpClient, private router:Router) { }
   ngOnInit(): void {
   }
@@ -18,8 +20,12 @@ export class RegisterComponent implements OnInit {
     const headers = { 'content-type': 'application/json'};
     const body= {
       'name':this.name.value,
-      'password':this.password.value
+      'password':this.password.value,
     };
+
+    if(this.user_role == 'STUDENT'){this.url = 'http://18.234.133.209:8080/studentreg';}
+    else if(this.user_role == 'MENTOR'){this.url = 'http://18.234.133.209:8080/mentorreg';}
+    else if(this.user_role == 'ADMIN'){this.url = 'http://18.234.133.209:8080/adminreg';}
 
     this.http.post<any>(this.url, JSON.stringify(body), {'headers':headers}).subscribe(response=>{
       console.log(response.statusCode);

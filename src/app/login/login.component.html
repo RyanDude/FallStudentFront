@@ -2,8 +2,8 @@
   <a href="/">HOME</a>
   <a routerLink="/login" class="active">Login</a>
   <a routerLink="/register">Register</a>
-  <a routerLink="/error">TEST</a>
 </div>
+
 <h2>LOGIN</h2>
 <form (ngSubmit)="submit()" >
   <div class="imgcontainer">
@@ -18,12 +18,13 @@
     <input type="password" placeholder="Enter Password" name="password" required [formControl]="password">
 
     <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
+    <label class="b">
+      Remember me<input type="checkbox" class="check" checked="checked" name="remember">
     </label>
+    <div style="top:10px; position:relative;">
+      <a routerLink="/">Forget password?</a>
+    </div>
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
+
 </form>
